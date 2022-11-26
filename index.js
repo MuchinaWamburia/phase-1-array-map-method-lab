@@ -10,7 +10,14 @@ const tutorials = [
   'what is the difference between event capturing and bubbling?',
   'what is JSONP?'
 ];
-
-const titleCased = () => {
-  return tutorials
+// element. map() calls a function once for each element in an array.
+// use word.slice(1) to return the extracted part in a new string
+// .join creates and returns a new string by concatenating all of the elements in an array.
+function titleCase(isString) {
+  return isString.split(' ').map(function(word) {
+    return (word.charAt(0).toUpperCase() + word.slice(1));
+  }).join(' ');
+}
+function titleCased() { 
+  return (tutorials.map(tutorial => titleCase(tutorial)));
 }
